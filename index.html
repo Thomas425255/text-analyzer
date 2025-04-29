@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+  <aside class="sidebar" id="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="switchPage('home')">Home</li>
+      <li onclick="switchPage('word')">Word Count</li>
+      <li onclick="switchPage('sentence')">Sentence Count</li>
+      <li onclick="switchPage('line')">Line Count</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <div id="home" class="page active">
+      <h1>Welcome!</h1>
+      <p class="intro-text">Click the button below to start analyzing your text with style!</p>
+      <button onclick="switchPage('word')">Start</button>
+    </div>
+
+    <div id="word" class="page">
+      <h2>Word Counter</h2>
+      <textarea placeholder="Type your text here..."></textarea>
+      <button onclick="countWords()">Count</button>
+      <p id="wordCountResult"></p>
+    </div>
+
+    <div id="sentence" class="page">
+      <h2>Sentence Counter</h2>
+      <textarea placeholder="Type your sentences..."></textarea>
+      <button onclick="countSentences()">Count</button>
+      <p id="sentenceCountResult"></p>
+    </div>
+
+    <div id="line" class="page">
+      <h2>Line Counter</h2>
+      <textarea placeholder="Paste text here..."></textarea>
+      <button onclick="countLines()">Count</button>
+      <p id="lineCountResult"></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
